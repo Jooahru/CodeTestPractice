@@ -3,12 +3,16 @@ import java.util.Scanner;
 
 public class ReverseWord {
 
-    public ArrayList<String> Solution(String[] words) {
+    public ArrayList<String> Solution(ArrayList<String> words) {
         ArrayList<String> reverseWords = new ArrayList<String>();
         for (String word : words
         ) {
-            String tmp = new StringBuilder(word).reverse().toString();
-            reverseWords.add(tmp);
+            char[] charWord = word.toCharArray();
+            String reverseWord = "";
+            for (int i = charWord.length - 1; i >= 0; i--) {
+                reverseWord += charWord[i];
+            }
+            reverseWords.add(reverseWord);
         }
         return reverseWords;
     }
@@ -18,14 +22,15 @@ public class ReverseWord {
         Scanner kb = new Scanner(System.in);
         System.out.println("입력할 단어갯수를 입력하세요");
         int Number = kb.nextInt();
-        String[] str = new String[Number];
+        ArrayList<String> words = new ArrayList<String>();
         for (int i = 0; i < Number; i++) {
-            str[i] = kb.next();
+            String word = kb.next();
+            words.add(word);
         }
-        ArrayList<String> reverseWords = reverseWord.Solution(str);
-        for (String x : reverseWords) {
-            System.out.println(x);
+        ArrayList<String> reverseWords = new ArrayList<String>();
+        reverseWords = reverseWord.Solution(words);
+        for (int i =0;i<reverseWords.size();i++) {
+            System.out.println(reverseWords.get(i));
         }
-
     }
 }
