@@ -1,3 +1,5 @@
+package String;
+
 public class SumOfMeasure {
     public int solution(int n) {
         int answer = 0;

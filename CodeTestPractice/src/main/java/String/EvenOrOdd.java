@@ -1,3 +1,5 @@
+package String;
+
 public class EvenOrOdd {
     String evenOrOdd(int num) {
         String answer = "";
