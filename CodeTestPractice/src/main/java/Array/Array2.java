@@ -1,3 +1,5 @@
+package Array;
+
 import java.util.Scanner;
 
 /*보이는 학생 수 구하기

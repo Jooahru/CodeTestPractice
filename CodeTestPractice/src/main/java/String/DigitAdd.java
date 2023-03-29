@@ -1,3 +1,5 @@
+package String;
+
 public class DigitAdd {
 
     int digitAdd(int n) {
