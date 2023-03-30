@@ -2,7 +2,7 @@ package Array;
 
 import java.util.Scanner;
 
-/*격자판 합 구하기*/
+/*봉우리 구하기*/
 public class Array10 {
 
 	int[] dx = { 0, 1, 0, -1 };
