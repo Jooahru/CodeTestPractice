@@ -1,4 +1,4 @@
-package Array;
+package array;
 
 import java.util.*;
 /*멘토링 시스템*/

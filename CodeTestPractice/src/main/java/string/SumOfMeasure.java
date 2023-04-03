@@ -1,4 +1,4 @@
-package String;
+package string;
 
 public class SumOfMeasure {
     public int solution(int n) {
