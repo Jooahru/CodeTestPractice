@@ -15,21 +15,16 @@ public class FindNumberSet {
 
 	public int solution(int number) {
 		int answer = 0;
-		int currentSum = 0;
 		int lt = 1;
-		for (int i = 1; i < number; i++) {
-			currentSum += i;
-			if (currentSum == number) {
+		number --;
+		while(number>0) {
+			lt++;
+			number -= lt;
+			if(number%lt==0) {
 				answer++;
 			}
-			while (currentSum >= number) {
-				currentSum -= lt;
-				lt++;
-				if (currentSum == number) {
-					answer++;
-				}
-			}
 		}
+		
 		return answer;
 	}
 
