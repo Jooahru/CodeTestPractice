@@ -14,18 +14,18 @@ A(2), a(1), b(1), C(1), e(2)로 알파벳과 그 개수가 모두 일치합니�
 public class Anagram {
 
     public String solution(String word1, String word2) {
-        String answer = "NO";
-        HashMap<Character,Integer> Map1 = new HashMap<>();
-        HashMap<Character,Integer> Map2 = new HashMap<>();
+        String answer = "YES";
+        HashMap<Character,Integer> map = new HashMap<>();
         for(char x : word1.toCharArray()){
-            Map1.put(x,Map1.getOrDefault(x,0)+1);
+            map.put(x,map.getOrDefault(x,0)+1);
         }
         for(char x : word2.toCharArray()){
-            Map2.put(x,Map2.getOrDefault(x,0)+1);
+            if(!map.containsKey(x) || map.get(x) ==0){
+                return "NO";
+            }
+            map.put(x,map.getOrDefault(x,0)-1);
         }
-        if(Map1.equals(Map2)){
-            answer = "YES";
-        }
+
 
         return answer;
     }
