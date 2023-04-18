@@ -15,8 +15,7 @@ public class RemoveLetterInsideParentheses {
         Stack<Character> stack = new Stack<Character>();
         for (Character x : sentence.toCharArray()) {
             if (x == ')') {
-                while (stack.pop() != '(')
-                    ;
+                while (stack.pop() != '(') ;
             } else {
                 stack.push(x);
             }
