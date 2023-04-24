@@ -30,9 +30,7 @@ public class SavePrincess {
         Scanner kb = new Scanner(System.in);
         int kings = kb.nextInt();
         int pickKing = kb.nextInt();
-        savePrincess.solution(kings, pickKing)
-
+        System.out.println(savePrincess.solution(kings, pickKing));
 
     }
-
 }
