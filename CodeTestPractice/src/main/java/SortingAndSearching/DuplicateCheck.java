@@ -1,20 +1,18 @@
 package SortingAndSearching;
 
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DuplicateCheck {
 
     public String solution(int number, int[] numbers) {
-        HashSet<Integer> set = new HashSet<>();
-        for (int x : numbers) {
-            set.add(x);
+        Arrays.sort(numbers);
+        for(int i =0;i<number-1;i++){
+            if(numbers[i]==numbers[i+1]){
+                return "D";
+            }
         }
-        if (set.size() == number) {
-            return "U";
-        }
-
-        return "D";
+        return "U";
     }
 
     public static void main(String[] args) {
