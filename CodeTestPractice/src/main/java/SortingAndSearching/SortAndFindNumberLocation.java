@@ -8,10 +8,17 @@ public class SortAndFindNumberLocation {
     public int solution(int number, int[] numbers) {
         int answer = 0;
         Arrays.sort(numbers);
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] == number) {
-                answer = i + 1;
+        int lt =0 ,rt = numbers.length-1;
+        while(lt<=rt){
+            int mid = (rt+lt)/2;
+            if(numbers[mid]==number){
+                answer = mid+1;
                 break;
+            }
+            if(numbers[mid]>number){
+                rt = mid-1;
+            }else{
+                lt = mid+1;
             }
         }
         return answer;
