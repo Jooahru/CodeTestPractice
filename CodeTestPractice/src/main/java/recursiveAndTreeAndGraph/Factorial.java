@@ -5,12 +5,11 @@ import java.util.Scanner;
 public class Factorial {
 
     public int solution(int number) {
-        int answer = 1;
-        for (int i = number; i >= 1; i--) {
-            answer = answer*i;
+        if (number == 1) {
+            return 1;
+        } else {
+            return number * solution(number - 1);
         }
-
-        return answer;
     }
 
     public static void main(String[] args) {
