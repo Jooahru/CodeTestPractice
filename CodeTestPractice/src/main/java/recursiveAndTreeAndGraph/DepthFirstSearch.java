@@ -31,15 +31,17 @@ public class DepthFirstSearch {
         tree.root.rt.rt = new Node(7);
         tree.solution(tree.root);
     }
-}
 
-class Node {
+    static class Node {
 
-    int data;
-    Node lt, rt;
+        int data;
+        Node lt, rt;
 
-    public Node(int val) {
-        data = val;
-        lt = rt = null;
+        public Node(int val) {
+            data = val;
+            lt = rt = null;
+        }
     }
+
 }
+
