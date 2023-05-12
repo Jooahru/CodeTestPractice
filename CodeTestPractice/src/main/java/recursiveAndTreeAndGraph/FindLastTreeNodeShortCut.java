@@ -22,6 +22,8 @@ public class FindLastTreeNodeShortCut {
     }
 
     static class Node {
+
+
         int data;
         Node lt, rt;
 
