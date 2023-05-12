@@ -1,22 +1,23 @@
 package recursiveAndTreeAndGraph;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FindWay {
 
     static int oneWay, wayListSize, answer = 0;
     static int[] ch;
-    static int ways[][];
+    static ArrayList<ArrayList<Integer>> ways;
 
-    public void solution(int startWay) {
-        if (startWay == oneWay) {
+    public void solution(int startPoint) {
+        if (startPoint == oneWay) {
             answer++;
         } else {
-            for (int i = 1; i <= oneWay; i++) {
-                if (ways[startWay][i] == 1 && ch[i] == 0) {
-                    ch[i] = 1;
-                    solution(i);
-                    ch[i] = 0;
+            for (int nextPoint : ways.get(startPoint)) {
+                if (ch[nextPoint] == 0) {
+                    ch[nextPoint] = 1;
+                    solution(nextPoint);
+                    ch[nextPoint] = 0;
                 }
             }
         }
@@ -27,12 +28,15 @@ public class FindWay {
         Scanner kb = new Scanner(System.in);
         oneWay = kb.nextInt();
         wayListSize = kb.nextInt();
+        ways = new ArrayList<ArrayList<Integer>>();
+        for (int i = 0; i <= oneWay; i++) {
+            ways.add(new ArrayList<Integer>());
+        }
         ch = new int[oneWay + 1];
-        ways = new int[oneWay + 1][oneWay + 1];
         for (int i = 0; i < wayListSize; i++) {
             int startPoint = kb.nextInt();
             int endPoint = kb.nextInt();
-            ways[startPoint][endPoint] = 1;
+            ways.get(startPoint).add(endPoint);
         }
         ch[1] = 1;
         findWay.solution(1);
