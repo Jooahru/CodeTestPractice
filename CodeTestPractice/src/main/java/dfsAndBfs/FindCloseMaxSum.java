@@ -8,16 +8,15 @@ public class FindCloseMaxSum {
     static int number, cutWeight = 0;
 
     public void DFS(int level, int sum, int[] weights) {
-        if (level == number) {
-            if (sum <= cutWeight && sum > answer) {
-                answer = sum;
-            }
+        if(sum>cutWeight){
             return;
+        }
+        if (level == number) {
+            answer = Math.max(answer, sum);
         } else {
             DFS(level + 1, sum + weights[level], weights);
             DFS(level + 1, sum, weights);
         }
-
     }
 
     public static void main(String[] args) {
