@@ -1,4 +1,4 @@
-package towPointerAndSlidingWindow;
+package twoPointerAndSlidingWindow;
 
 import java.util.Scanner;
 
