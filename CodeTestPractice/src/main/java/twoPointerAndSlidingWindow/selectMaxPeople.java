@@ -1,8 +1,11 @@
 package twoPointerAndSlidingWindow;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /*
  * 씨름 선수
@@ -36,14 +39,16 @@ public class selectMaxPeople {
 		return cnt;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NumberFormatException, IOException {
 		selectMaxPeople T = new selectMaxPeople();
-		Scanner kb = new Scanner(System.in);
-		int n = kb.nextInt();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+
 		ArrayList<Body> arr = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
-			int h = kb.nextInt();
-			int w = kb.nextInt();
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			int h = Integer.parseInt(st.nextToken());
+			int w = Integer.parseInt(st.nextToken());
 			arr.add(new Body(h, w));
 		}
 		System.out.println(T.solution(arr, n));
