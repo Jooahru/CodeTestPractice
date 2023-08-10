@@ -1,6 +1,11 @@
 package greedyAlgorithm;
 
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.StringTokenizer;
 
 public class Wedding {
 
@@ -18,13 +23,14 @@ public class Wedding {
 		return answer;
 	}
 
-	public static void main(String[] args) {
-		Scanner kb = new Scanner(System.in);
-		int n = kb.nextInt();
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
 		ArrayList<Time> arr = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
-			int sT = kb.nextInt();
-			int eT = kb.nextInt();
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			int sT = Integer.parseInt(st.nextToken());
+			int eT = Integer.parseInt(st.nextToken());
 			arr.add(new Time(sT, 's'));
 			arr.add(new Time(eT, 'e'));
 		}
