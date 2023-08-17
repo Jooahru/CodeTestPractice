@@ -20,8 +20,6 @@ public class Bj5525 {
 
 		int answer = 0;
 		for (int j = 0; j < length - number - (number); j++) {
-			System.out.println(sentence.substring(j, j + number + 2 * (number - 1)));
-			System.out.println(pN);
 			if (pN.equals(sentence.substring(j, j + number + 2 * (number - 1)))) {
 				answer++;
 			}
