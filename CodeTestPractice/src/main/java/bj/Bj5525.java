@@ -11,18 +11,22 @@ public class Bj5525 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int number = Integer.parseInt(br.readLine());
 		int length = Integer.parseInt(br.readLine());
-		String sentence = br.readLine();
-
-		String pN = "I";
-		for (int i = 0; i < number; i++) {
-			pN = pN + "OI";
-		}
+		char[] sentence = br.readLine().toCharArray();
 
 		int answer = 0;
-		for (int j = 0; j < length - number - (number); j++) {
-			if (pN.equals(sentence.substring(j, j + number + 2 * (number - 1)))) {
-				answer++;
+		int tempCount = 0;
+		for (int j = 1; j < length - 1; j++) {
+			if (sentence[j - 1] == 'I' && sentence[j] == 'O' && sentence[j + 1] == 'I') {
+				tempCount++;
+				if (tempCount == number) {
+					tempCount--;
+					answer++;
+				}
+				j++;
+			} else {
+				tempCount = 0;
 			}
+
 		}
 		System.out.println(answer);
 	}
